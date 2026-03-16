@@ -1,0 +1,37 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<title>Nepal Global Trends</title>
+</head>
+
+<body>
+
+<h1>Nepal Global Trends Platform</h1>
+
+<div id="articles"></div>
+
+<script>
+
+fetch("http://localhost:8000/articles")
+.then(response => response.json())
+.then(data => {
+
+let container = document.getElementById("articles")
+
+data.forEach(article => {
+
+let div = document.createElement("div")
+
+div.innerHTML = "<h3>" + article.title + "</h3>"
+
+container.appendChild(div)
+
+})
+
+})
+
+</script>
+
+</body>
+</html>
